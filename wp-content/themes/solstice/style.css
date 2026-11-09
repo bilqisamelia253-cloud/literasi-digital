@@ -1,0 +1,98 @@
+/*
+Theme Name: Solstice
+Theme URI: https://themeshaper.com/solstice/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Solstice is a block theme for HVAC and home service businesses. The palette swings from deep navy and ember orange in bold full-width sections to soft off-whites where there is reading to do, and modern serif headlines pair with a rounded sans-serif for body and interface text. The pattern library covers what a trade site actually needs — a services grid, a coverage area map, a credentials strip, reviews with star ratings, before-and-after comparisons, an FAQ accordion, opening hours, and an estimate request form — with templates for the blog, archives, and search.
+Requires at least: 7.1
+Tested up to: 7.1
+Requires PHP: 7.2
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: solstice
+Tags: featured-images, full-site-editing, block-patterns, right-sidebar, rtl-language-support, threaded-comments, translation-ready, wide-blocks, block-styles
+
+/* Crossfade page transition */
+
+@view-transition {
+	navigation: auto;
+}
+
+/* Font smoothing */
+body {
+	text-rendering: geometricprecision;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ * Progressive enhancement to reduce widows and orphans
+ * https://github.com/WordPress/gutenberg/issues/55190
+ */
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
+	text-wrap: pretty;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 0.1em
+}
+
+/*
+ * Change the position of the more block on the front, by making it a block level element.
+ * https://github.com/WordPress/gutenberg/issues/65934
+*/
+.more-link {
+	display: block;
+}
+
+/*
+ * Prevents unnecessary scrollbars while handling long lines of preformatted text.
+ * https://core.trac.wordpress.org/ticket/63875
+ */
+:where(pre) {
+	overflow-x: auto;
+}
+
+/*
+ * Tighten margin when a heading follows another heading in post content.
+ * The doubled top-margin in theme.json signals a section break above; when
+ * two headings are adjacent the subordinate one should sit closer to its
+ * parent rather than read as a new section. The class is unwrapped from
+ * :where() so we beat the theme.json-generated `:root :where(...)` rule
+ * (which is 0,1,0 specificity from :root).
+ */
+.wp-block-post-content :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+	margin-top: var(--wp--style--block-gap);
+}
+
+/*
+ * Make sure footers have no margin.
+ * https://github.com/WordPress/gutenberg/issues/47637
+ */
+footer.wp-block-template-part {
+	margin-block-start: 0 !important;
+}
+
+/*
+ * Category links underline on hover rather than at rest, inverting the
+ * site-wide link convention. Written here, unwrapped from :where(), because
+ * the theme.json `elements.link:hover` rule resolves to the same 0,1,0
+ * specificity and would otherwise win on source order.
+ */
+.wp-block-post-terms a,
+.wp-block-terms-query a {
+	text-decoration: none;
+}
+
+.wp-block-post-terms a:hover,
+.wp-block-post-terms a:focus,
+.wp-block-terms-query a:hover,
+.wp-block-terms-query a:focus {
+	text-decoration: underline;
+}

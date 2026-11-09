@@ -1,0 +1,21 @@
+/* Editor styles for WiseTech Core. */
+.editor-styles-wrapper {
+  color: #172033;
+  background: #ffffff;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.editor-styles-wrapper a {
+  color: #2563eb;
+  text-underline-offset: 3px;
+}
+.editor-styles-wrapper .wp-block {
+  max-width: 760px;
+}
+.editor-styles-wrapper .wp-block[data-align="wide"] {
+  max-width: 1180px;
+}
+.editor-styles-wrapper .wp-block[data-align="full"] {
+  max-width: none;
+}

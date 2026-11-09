@@ -1,0 +1,14 @@
+.wp-block-accordion-item.is-layout-flow > * {
+    margin-top: 0;
+}
+.wp-block-accordion-heading__toggle:hover .wp-block-accordion-heading__toggle-title {
+    text-decoration: none;
+}
+
+/* Draw the plus so it stays centred in any font. */
+.wp-block-accordion-heading__toggle-icon {
+        -webkit-text-fill-color: transparent;
+        background:
+                linear-gradient(currentColor, currentColor) center / 0.6em 0.09em no-repeat,
+                linear-gradient(currentColor, currentColor) center / 0.09em 0.6em no-repeat;
+}
